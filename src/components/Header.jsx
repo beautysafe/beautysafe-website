@@ -4,7 +4,7 @@ import { Scan, Menu, X } from "lucide-react";
 import { createPageUrl } from "@/utils";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from './lib/LanguageContext';
-
+import logo from "../assets/img/logo.png";
 export default function Header() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
@@ -41,7 +41,7 @@ export default function Header() {
         {/* Logo */}
         <Link to={homePath} className="flex items-center gap-2 group">
           <div className="w-9 h-9 rounded-xl flex items-center justify-center shadow-md">
-            <img src="src/assets/img/logo.png" alt="BeautySafe Logo" className="w-7 h-7 rounded-lg" />
+            <img src={logo} alt="BeautySafe Logo" className="w-7 h-7 rounded-lg" />
           </div>
           <span className="text-xl tracking-tight text-gray-900 group-hover:text-purple-700 transition-colors">
             Beaty Safe

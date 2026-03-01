@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '../lib/LanguageContext';
-
+import mockup2 from "../assets/img/mockup2.png";
 type ApiProduct = {
   uid: number;
   name: string;
@@ -235,7 +235,7 @@ export default function Hero() {
             <div className="relative mx-auto w-full max-w-sm">
               <div className="flex flex-col items-center justify-center">
                 <img
-                  src="src/assets/img/mockup2.png"
+                  src={mockup2}
                   alt="App Mockup"
                   className="h-[75vh]"
                 />
