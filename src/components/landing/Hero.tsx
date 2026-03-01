@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '../lib/LanguageContext';
-import mockup2 from "../assets/img/mockup2.png";
+import mockup2 from "../../assets/img/mockup2.png";
 type ApiProduct = {
   uid: number;
   name: string;
