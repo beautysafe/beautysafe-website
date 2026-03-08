@@ -51,8 +51,8 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">{t('footer.support')}</h3>
             <ul className="space-y-2 text-sm">
               <li><a href="#" className="hover:text-green-400 transition-colors">{t('footer.links.help')}</a></li>
-              <li><a href="#" className="hover:text-green-400 transition-colors">{t('footer.links.privacy')}</a></li>
-              <li><a href="#" className="hover:text-green-400 transition-colors">{t('footer.links.terms')}</a></li>
+              <li><a href="/privacy-policy" className="hover:text-green-400 transition-colors">{t('footer.links.privacy')}</a></li>
+              <li><a href="/privacy-policy" className="hover:text-green-400 transition-colors">{t('footer.links.terms')}</a></li>
               <li><a href="#" className="hover:text-green-400 transition-colors">{t('footer.links.cookies')}</a></li>
             </ul>
           </div>
