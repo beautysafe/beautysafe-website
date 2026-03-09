@@ -3,10 +3,17 @@ import { Scan, Mail, Instagram, Twitter, Facebook } from 'lucide-react';
 import { useLanguage } from '../lib/LanguageContext';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
+import logo from "../../assets/img/logo.png";
 
 export default function Footer() {
   const { t } = useLanguage();
-
+  const homePath = createPageUrl("Home"); 
+  const sectionLinks = [
+    { label: t('header.howItWorks'), hash: "how-it-works" },
+    { label: t('header.features'), hash: "features" },
+    { label: t('header.categories'), hash: "categories" },
+    { label: t('header.download'), hash: "download" },
+  ];
   return (
     <footer className="bg-gray-900 text-gray-300 py-16 px-6">
       <div className="max-w-7xl mx-auto">
@@ -14,8 +21,8 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               
-              <div className="w-9 h-9 rounded-xl flex items-center justify-center shadow-md">
-                <img src="src/assets/img/logo.png" alt="BeautySafe Logo" className="w-7 h-7 rounded-lg" />
+              <div className="w-9 h-9 flex items-center justify-center shadow-md">
+              <img src={logo} alt="BeautySafe Logo" className="" />
               </div>
               <span className="text-xl tracking-tight text-white group-hover:text-purple-700 transition-colors">
                 Beaty Safe
@@ -30,10 +37,16 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">{t('footer.product')}</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-green-400 transition-colors">{t('footer.links.features')}</a></li>
-              <li><a href="#" className="hover:text-green-400 transition-colors">{t('footer.links.howItWorks')}</a></li>
-              <li><a href="#" className="hover:text-green-400 transition-colors">{t('footer.links.database')}</a></li>
-              <li><a href="#" className="hover:text-green-400 transition-colors">{t('footer.links.pricing')}</a></li>
+                {sectionLinks.map((item) => (
+                <li><a
+                  key={item.hash}
+                  href={`${homePath}#${item.hash}`}
+                  className="hover:text-green-400 transition-colors"
+                >
+                  {item.label}
+                </a></li>
+              ))}
+             
             </ul>
           </div>
 

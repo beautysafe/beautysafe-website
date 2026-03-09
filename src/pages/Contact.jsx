@@ -43,7 +43,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-green-50/30 to-white">
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6">
+      <section className="pb-16 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

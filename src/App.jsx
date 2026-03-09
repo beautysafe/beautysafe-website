@@ -3,13 +3,14 @@ import { pagesConfig } from "./pages.config";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ScrollToHash from "@/lib/ScrollToHash";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-
+import ScrollToTop from './components/ScrollToTop';
 const { Pages, Layout, mainPage } = pagesConfig;
 
 function App() {
   return (
     <Router>
       <ScrollToHash />
+      <ScrollToTop />
 
       <Routes>
         {Object.entries(Pages).map(([path, Component]) => (
