@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '../lib/LanguageContext';
-import mockup2 from "../../assets/img/mockup2.png";
+import mockup1 from "../../assets/img/mockup1.png";
+import android from "../../assets/img/android.png";
 type ApiProduct = {
   uid: number;
   name: string;
@@ -18,7 +19,19 @@ const API_BASE = 'https://api.beautysafe.online';
 
 export default function Hero() {
   const { t } = useLanguage();
-
+  const handleDownload = () => {
+    const ua = navigator.userAgent || navigator.vendor;
+  
+    const isAndroid = /android/i.test(ua);
+  
+    if (isAndroid) {
+      window.location.href =
+        "https://play.google.com/store/apps/details?id=com.lemsainnovation.beautysafe";
+    } else {
+      window.location.href =
+        "https://play.google.com/store/apps/details?id=com.lemsainnovation.beautysafe&hl=en-US&ah=G8SQohMCm10qGg-fpqGe1G_PF14";
+    }
+  };
   const [isTryMode, setIsTryMode] = useState(false);
   const [ean, setEan] = useState('');
   const [loading, setLoading] = useState(false);
@@ -98,8 +111,8 @@ export default function Hero() {
               <span className="text-sm font-medium text-purple-800">{t('hero.badge')}</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
-              {t('hero.title')}
+            <h1 className="text-5xl md:text-5xl font-bold leading-tight tracking-tight">
+              {/* {t('hero.title')} */}
               <span className="block bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                 {t('hero.titleHighlight')}
               </span>
@@ -112,17 +125,18 @@ export default function Hero() {
             {/* Buttons */}
             {!isTryMode ? (
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-6 text-lg rounded-2xl shadow-lg shadow-purple-600/30 transition-all hover:shadow-xl hover:shadow-purple-600/40"
-                >
-                  {t('hero.downloadNow')}
-                </Button>
+              
+                <img
+                  src={android}
+                  alt="Get it on Google Play"
+                  onClick={handleDownload}
+                  className="h-12 w-auto cursor-pointer transition-transform hover:scale-105"
+                />
 
                 <Button
                   size="lg"
                   variant="outline"
-                  className="px-8 py-6 text-lg rounded-2xl border-2 hover:bg-gray-50"
+                  className="px-8 py-6 text-lg  border-2 hover:bg-gray-50"
                   onClick={openTryMode}
                 >
                   {t('hero.tryIt')}
@@ -233,13 +247,15 @@ export default function Hero() {
             className="relative"
           >
             <div className="relative mx-auto w-full max-w-sm">
-              <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center perspective-wrap">
+              <div className="phone">
                 <img
-                  src={mockup2}
+                  src={mockup1}
                   alt="App Mockup"
-                  className="h-[75vh]"
+                  className="h-[75vh] w-auto block"
                 />
               </div>
+            </div>
 
               <motion.div
                 animate={{ y: [0, -10, 0] }}

@@ -9,11 +9,11 @@ const translations = {
     },
     hero: {
       badge: 'Smart Cosmetic Analysis',
-      title: "Know What's",
-      titleHighlight: 'In Your Products',
+      title: "",
+      titleHighlight: "Know What's In Your Products",
       description: 'Scan any cosmetic product and instantly discover if it\'s safe for you. Make informed choices with science-backed analysis.',
       downloadNow: 'Download Now',
-      tryIt: 'Try it',
+      tryIt: 'Try scanning now',
       animatedText:{
         safe: 'Safe',
         instantAnalysis: 'Instant Analysis'
@@ -69,15 +69,25 @@ const translations = {
       }
     },
     categories: {
-      title: 'Explore by Category',
-      subtitle: 'Browse through our extensive database organized by product type',
+      title: 'Explore by Concern',
+      subtitle: 'Quickly find categories related to your hair and skin concerns',
       items: {
-        haircare: { name: 'Hair Care', count: '2,500+ products' },
-        skincare: { name: 'Skin Care', count: '3,200+ products' },
-        bodycare: { name: 'Body Care', count: '1,800+ products' },
-        suncare: { name: 'Sun Care', count: '800+ products' },
-        babycare: { name: 'Baby Care', count: '950+ products' },
-        makeup: { name: 'Makeup', count: '2,100+ products' }
+        dryHair: 'Dry Hair',
+        damagedHair: 'Damaged Hair',
+        coloredHair: 'Colored Hair',
+        curlyHair: 'Curly Hair',
+        fineHair: 'Fine Hair',
+        oilyHair: 'Oily Hair',
+        hairLoss: 'Hair Loss',
+        dandruff: 'Dandruff',
+    
+        acneSkin: 'Acne-Prone Skin',
+        darkCirclesSkin: 'Dark Circles',
+        eczemaSkin: 'Eczema',
+        oilySkin: 'Oily Skin',
+        blackheadsSkin: 'Blackheads',
+        pigmentationSpotsSkin: 'Pigmentation Spots',
+        enlargedPores: 'Enlarged Pores'
       }
     },
     cta: {
@@ -153,11 +163,11 @@ const translations = {
     },
     hero: {
       badge: 'Analyse cosmétique intelligente',
-      title: 'Découvrez',
-      titleHighlight: 'ce qu’il y a dans vos produits',
+      title: '',
+      titleHighlight: 'Découvrez ce qu’il y a dans vos produits',
       description: 'Scannez vos produits cosmétiques en un instant et découvrez s’ils sont réellement adaptés à votre peau. Prenez des décisions éclairées grâce à une analyse scientifique fiable et transparente.',
       downloadNow: 'Télécharger l’application',
-      tryIt: 'Essayez-le',
+      tryIt: 'Essayez de scanner maintenant',
       stats: {
         scanned: 'Produits analysés',
         users: 'Utilisateurs conquis',
@@ -216,15 +226,25 @@ const translations = {
     },
   
     categories: {
-      title: 'Explorez par catégorie',
-      subtitle: 'Trouvez facilement les produits qui correspondent à vos besoins',
+      title: 'Explorez par besoin',
+      subtitle: 'Retrouvez rapidement les catégories liées à vos préoccupations capillaires et cutanées',
       items: {
-        haircare: { name: 'Soins capillaires', count: '2 500+ produits' },
-        skincare: { name: 'Soins du visage', count: '3 200+ produits' },
-        bodycare: { name: 'Soins du corps', count: '1 800+ produits' },
-        suncare: { name: 'Protection solaire', count: '800+ produits' },
-        babycare: { name: 'Soins bébé', count: '950+ produits' },
-        makeup: { name: 'Maquillage', count: '2 100+ produits' }
+        dryHair: 'Cheveux secs',
+        damagedHair: 'Cheveux abîmés',
+        coloredHair: 'Cheveux colorés',
+        curlyHair: 'Cheveux bouclés',
+        fineHair: 'Cheveux fins',
+        oilyHair: 'Cheveux gras',
+        hairLoss: 'Chute de cheveux',
+        dandruff: 'Pellicules',
+    
+        acneSkin: 'Peau à tendance acnéique',
+        darkCirclesSkin: 'Cernes',
+        eczemaSkin: 'Eczéma',
+        oilySkin: 'Peau grasse',
+        blackheadsSkin: 'Points noirs',
+        pigmentationSpotsSkin: 'Taches pigmentaires',
+        enlargedPores: 'Pores dilatés'
       }
     },
   
@@ -248,7 +268,7 @@ const translations = {
       product: 'Produit',
       company: 'Entreprise',
       support: 'Assistance',
-      copyright: '© 2026 Beaty Safe. Tous droits réservés.',
+      copyright: '© 2026 Lemsa Innovation. Tous droits réservés.',
       links: {
         features: 'Fonctionnalités',
         howItWorks: 'Comment ça fonctionne',
@@ -283,7 +303,7 @@ const translations = {
       info: {
         title: 'Nos coordonnées',
         email: 'E-mail',
-        emailValue: 'support@beatysafe.com',
+        emailValue: 'beautysafe.dev@gmail.com',
         phone: 'Téléphone',
         phoneValue: '+1 (555) 123-4567',
         address: 'Adresse',
@@ -297,10 +317,10 @@ const translations = {
     hero: {
       badge: 'تحليل ذكي لمستحضرات التجميل',
       title: 'اعرف ما هو موجود',
-      titleHighlight: 'في منتجاتك',
+      titleHighlight: ' اعرف ما هو موجود في منتجاتك',
       description: 'امسح أي منتج تجميل واكتشف على الفور ما إذا كان آمنًا لك. اتخذ قرارات مستنيرة بناءً على تحليل علمي.',
       downloadNow: 'تحميل الآن',
-      tryIt: 'جربه',
+      tryIt: 'جرب المسح الآن',
       animatedText:{
         safe: 'آمن',
         instantAnalysis: 'تحليل فوري'
@@ -356,15 +376,25 @@ const translations = {
       }
     },
     categories: {
-      title: 'استكشف حسب الفئة',
-      subtitle: 'تصفح قاعدة البيانات الواسعة لدينا منظمة حسب نوع المنتج',
+      title: 'استكشف حسب المشكلة',
+      subtitle: 'اعثر بسرعة على الفئات المرتبطة بمشاكل الشعر والبشرة',
       items: {
-        haircare: { name: 'العناية بالشعر', count: '2,500+ منتج' },
-        skincare: { name: 'العناية بالبشرة', count: '3,200+ منتج' },
-        bodycare: { name: 'العناية بالجسم', count: '1,800+ منتج' },
-        suncare: { name: 'الحماية من الشمس', count: '800+ منتج' },
-        babycare: { name: 'العناية بالطفل', count: '950+ منتج' },
-        makeup: { name: 'المكياج', count: '2,100+ منتج' }
+        dryHair: 'الشعر الجاف',
+        damagedHair: 'الشعر التالف',
+        coloredHair: 'الشعر المصبوغ',
+        curlyHair: 'الشعر المجعد',
+        fineHair: 'الشعر الخفيف',
+        oilyHair: 'الشعر الدهني',
+        hairLoss: 'تساقط الشعر',
+        dandruff: 'القشرة',
+    
+        acneSkin: 'البشرة المعرضة لحب الشباب',
+        darkCirclesSkin: 'الهالات السوداء',
+        eczemaSkin: 'الأكزيما',
+        oilySkin: 'البشرة الدهنية',
+        blackheadsSkin: 'الرؤوس السوداء',
+        pigmentationSpotsSkin: 'التصبغات',
+        enlargedPores: 'المسام الواسعة'
       }
     },
     cta: {

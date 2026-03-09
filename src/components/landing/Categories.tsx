@@ -1,54 +1,44 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Droplet, Wind, Sun, Heart, Star } from 'lucide-react';
 import { useLanguage } from '../lib/LanguageContext';
+
+import dryHair from '../../assets/img/ctg/dry-hair.png';
+import damagedHair from '../../assets/img/ctg/damaged-hair.png';
+import coloredHair from '../../assets/img/ctg/colored-hair.png';
+import curlyHair from '../../assets/img/ctg/curly.png';
+import thinHair from '../../assets/img/ctg/thin-hair.png';
+import oilyHair from '../../assets/img/ctg/oily-hair.png';
+import hairLoss from '../../assets/img/ctg/hair-loss.png';
+import dandruff from '../../assets/img/ctg/dandruff.png';
+
+import acne from '../../assets/img/ctg/acne.png';
+import cernes from '../../assets/img/ctg/cernes.png';
+import eczema from '../../assets/img/ctg/eczema.png';
+import oilySkin from '../../assets/img/ctg/oily-skin.png';
+import blackheads from '../../assets/img/ctg/blackheads.png';
+import pigmentation from '../../assets/img/ctg/pigmentation.png';
+import enlarged from '../../assets/img/ctg/enlarged.png';
 
 export default function Categories() {
   const { t } = useLanguage();
-  
+
   const categories = [
-    {
-      icon: Sparkles,
-      name: t('categories.items.haircare.name'),
-      count: t('categories.items.haircare.count'),
-      color: 'from-purple-500 to-purple-600',
-      bg: 'bg-purple-50'
-    },
-    {
-      icon: Droplet,
-      name: t('categories.items.skincare.name'),
-      count: t('categories.items.skincare.count'),
-      color: 'from-pink-500 to-pink-600',
-      bg: 'bg-pink-50'
-    },
-    {
-      icon: Wind,
-      name: t('categories.items.bodycare.name'),
-      count: t('categories.items.bodycare.count'),
-      color: 'from-blue-500 to-blue-600',
-      bg: 'bg-blue-50'
-    },
-    {
-      icon: Sun,
-      name: t('categories.items.suncare.name'),
-      count: t('categories.items.suncare.count'),
-      color: 'from-orange-500 to-orange-600',
-      bg: 'bg-orange-50'
-    },
-    {
-      icon: Heart,
-      name: t('categories.items.babycare.name'),
-      count: t('categories.items.babycare.count'),
-      color: 'from-green-500 to-green-600',
-      bg: 'bg-green-50'
-    },
-    {
-      icon: Star,
-      name: t('categories.items.makeup.name'),
-      count: t('categories.items.makeup.count'),
-      color: 'from-indigo-500 to-indigo-600',
-      bg: 'bg-indigo-50'
-    }
+    { image: dryHair, name: t('categories.items.dryHair') },
+    { image: damagedHair, name: t('categories.items.damagedHair') },
+    { image: coloredHair, name: t('categories.items.coloredHair') },
+    { image: curlyHair, name: t('categories.items.curlyHair') },
+    { image: thinHair, name: t('categories.items.fineHair') },
+    { image: oilyHair, name: t('categories.items.oilyHair') },
+    { image: hairLoss, name: t('categories.items.hairLoss') },
+    { image: dandruff, name: t('categories.items.dandruff') },
+
+    { image: acne, name: t('categories.items.acneSkin') },
+    { image: cernes, name: t('categories.items.darkCirclesSkin') },
+    { image: eczema, name: t('categories.items.eczemaSkin') },
+    { image: oilySkin, name: t('categories.items.oilySkin') },
+    { image: blackheads, name: t('categories.items.blackheadsSkin') },
+    { image: pigmentation, name: t('categories.items.pigmentationSpotsSkin') },
+    { image: enlarged, name: t('categories.items.enlargedPores') },
   ];
 
   return (
@@ -69,23 +59,29 @@ export default function Categories() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {categories.map((category, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.4, delay: index * 0.04 }}
+              whileHover={{ y: -4 }}
               className="group cursor-pointer"
             >
-              <div className={`${category.bg} rounded-3xl p-8 text-center transition-all group-hover:shadow-xl border border-transparent group-hover:border-gray-200`}>
-                <div className={`w-16 h-16 bg-gradient-to-br ${category.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
-                  <category.icon className="w-8 h-8 text-white" />
+              <div className="rounded-3xl p-5 text-center bg-white border border-gray-100 shadow-sm transition-all group-hover:shadow-lg group-hover:border-gray-200">
+                <div className="w-20 h-20 mx-auto mb-4 rounded-2xl overflow-hidden bg-gray-50 flex items-center justify-center">
+                  <img
+                    src={category.image}
+                    alt={category.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-lg font-bold mb-2">{category.name}</h3>
-                <p className="text-sm text-gray-600">{category.count}</p>
+
+                <h3 className="text-sm md:text-base font-semibold text-gray-900 leading-snug">
+                  {category.name}
+                </h3>
               </div>
             </motion.div>
           ))}

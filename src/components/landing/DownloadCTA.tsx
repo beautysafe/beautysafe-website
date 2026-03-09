@@ -3,10 +3,23 @@ import { motion } from 'framer-motion';
 import { Apple, Smartphone, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '../lib/LanguageContext';
+import android from "../../assets/img/android.png";
 
 export default function DownloadCTA() {
   const { t } = useLanguage();
-
+  const handleDownload = () => {
+    const ua = navigator.userAgent || navigator.vendor;
+  
+    const isAndroid = /android/i.test(ua);
+  
+    if (isAndroid) {
+      window.location.href =
+        "https://play.google.com/store/apps/details?id=com.lemsainnovation.beautysafe";
+    } else {
+      window.location.href =
+      "https://play.google.com/store/apps/details?id=com.lemsainnovation.beautysafe&hl=en-US&ah=G8SQohMCm10qGg-fpqGe1G_PF14";
+    }
+  };
   return (
     <section id="download" className="py-24 px-6 bg-gradient-to-br from-purple-600 via-purple-400 to-blue-600 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
@@ -32,7 +45,7 @@ export default function DownloadCTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button 
+            {/* <Button 
               size="lg"
               className="bg-white text-purple-700 hover:bg-purple-50 px-8 py-7 text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all group"
             >
@@ -54,7 +67,13 @@ export default function DownloadCTA() {
                 <div className="font-bold">{t('cta.playStoreName')}</div>
               </div>
               <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            </Button> */}
+            <img
+                  src={android}
+                  alt="Get it on Google Play"
+                  onClick={handleDownload}
+                  className="h-16 w-auto cursor-pointer transition-transform hover:scale-105"
+                />
           </div>
 
           <div className="flex flex-wrap justify-center gap-8 pt-8 text-purple-50">

@@ -208,7 +208,7 @@ export default function Contact() {
                 </div>
 
                 {/* Address */}
-                <div className="flex items-start gap-4">
+                {/* <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-6 h-6" />
                   </div>
@@ -218,7 +218,7 @@ export default function Contact() {
                       {t('contact.info.addressValue')}
                     </p>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/* Additional Info Card */}
