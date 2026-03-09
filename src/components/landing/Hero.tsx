@@ -130,13 +130,13 @@ export default function Hero() {
                   src={android}
                   alt="Get it on Google Play"
                   onClick={handleDownload}
-                  className="h-12 w-auto cursor-pointer transition-transform hover:scale-105"
+                  className="lg:h-12  w-auto cursor-pointer transition-transform hover:scale-105"
                 />
 
                 <Button
                   size="lg"
                   variant="outline"
-                  className="px-8 py-6 text-lg  border-2 hover:bg-gray-50"
+                  className="lg:px-8 sm:px-12 py-6 text-lg  border-2 hover:bg-gray-50"
                   onClick={openTryMode}
                 >
                   {t('hero.tryIt')}
