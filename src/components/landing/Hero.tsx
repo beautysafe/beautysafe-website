@@ -177,9 +177,9 @@ export default function Hero() {
                 )}
 
                 {product && (
-                  <div className="rounded-xl border bg-white p-4 space-y-4">
-                    <div className="flex gap-4">
-                      <div className="w-20 h-20 rounded-xl bg-gray-50 overflow-hidden flex items-center justify-center">
+                  <div className="rounded-xl border bg-white p-4 space-y-4 max-w-full overflow-hidden">
+                    <div className="flex items-start gap-4 min-w-0">
+                      <div className="w-20 h-20 rounded-xl bg-gray-50 overflow-hidden flex items-center justify-center shrink-0">
                         {product.images?.[0]?.thumbnail ? (
                           <img
                             src={product.images[0].thumbnail}
@@ -191,19 +191,21 @@ export default function Hero() {
                         )}
                       </div>
 
-                      <div className="min-w-0">
-                        <div className="font-semibold text-gray-900 truncate">
+                      <div className="min-w-0 flex-1">
+                        <div className="font-semibold text-gray-900 break-words leading-snug">
                           {product.name}
-                        </div>                        
-                        <div className="flex flex-row justify-between">
-                          <div className="text-sm text-gray-600">
+                        </div>
+
+                        <div className="mt-1 flex items-center justify-between gap-3 min-w-0">
+                          <div className="text-sm text-gray-600 truncate">
                             {product.brand?.name ?? '-'}
                           </div>
-                          <div className="text-sm text-gray-600">
+                          <div className="text-sm text-gray-600 shrink-0">
                             {product.validScore} /20
                           </div>
                         </div>
-                        <div className="text-sm text-gray-500">
+
+                        <div className="text-sm text-gray-500 break-all">
                           EAN: {product.ean}
                         </div>
                       </div>
@@ -218,13 +220,17 @@ export default function Hero() {
                           {(product.composition ?? []).map((c) => (
                             <li
                               key={c.id}
-                              className="flex items-center rounded-lg bg-white px-2 py-1 border text-sm text-gray-800"
+                              className="flex items-center rounded-lg bg-white px-2 py-1 border text-sm text-gray-800 max-w-full"
                             >
-                              <span className="font-medium">{c.name ? c.name : c.officialName}</span>
+                              <span className="font-medium break-words">
+                                {c.name ? c.name : c.officialName}
+                              </span>
                             </li>
                           ))}
                           {(product.composition ?? []).length === 0 && (
-                            <li className="text-sm text-gray-500">Aucune composition disponible.</li>
+                            <li className="text-sm text-gray-500">
+                              Aucune composition disponible.
+                            </li>
                           )}
                         </ul>
                       </div>
